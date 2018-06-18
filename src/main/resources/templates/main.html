@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" 
-      content="width=device-width, initial-scale=1">
+<#include "/include/header.html"/>
 <title>Wellcom</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <body>
-	<h1>Hello Dayary</h1>
-<!-- script libary -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<#include "/include/nav.html"/>
+	<div class="container">
+		<#list diaryList as diary>
+		<div class="row">
+			<div class="well col-sm-8 <#if diary_index%2==1>col-sm-offset-4 text-right</#if>">
+				<h4>${diary.title}</h4>
+				<h5>Post by ${diary.u_id},  
+					<span class="glyphicon glyphicon-time"></span>
+					${diary.regdate?substring(0,19)}
+				</h5>
+				<h5>
+					<span class="label label-primary">맑음</span>
+					<span class="label label-success">휴식</span>
+				</h5>
+				<br />
+				<p>${diary.content}</p>
+			</div>
+		</div>
+		</#list>
+	</div>
+<#include "/include/footer.html"/>
 </body>
 </html>
+
+
+
+
+
+
