@@ -14,3 +14,4 @@ create sequence seq_diary_id;
 
 insert into diary values(seq_diary_id.nextval, 'Weed', '첫 번째 일기', '곧 점심시간이다', sysdate);
 insert into diary values(seq_diary_id.nextval, 'Weed', '두 번째 일기', '곧 프로젝트를 시작해야 한다', sysdate);
+
