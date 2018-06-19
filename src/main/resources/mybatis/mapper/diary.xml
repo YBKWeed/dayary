@@ -4,8 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="diary">
 	    <select id="list" resultType="diary">
-	    	select*from diary
+	    	select*from diary order by regdate
 	    </select>
+	    <insert id="add" parameterType="diary">
+	    	insert into diary values(seq_diary_id.nextval, 'Weed', #{title}, #{content}, sysdate)
+	    </insert>
 </mapper>
 
 
