@@ -1,5 +1,4 @@
-
-create user YBKWeed identified by 11111111;
+﻿create user YBKWeed identified by 11111111;
 
 grant dba to YBKWeed;
 
@@ -50,10 +49,5 @@ create table tag(
 );
 
 create sequence seq_tag_id;
-
-
-
-
-
 
 

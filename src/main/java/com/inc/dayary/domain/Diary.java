@@ -2,7 +2,6 @@ package com.inc.dayary.domain;
 
 import java.util.List;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -54,6 +53,4 @@ public class Diary {
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
 	}
-	
-	
 }

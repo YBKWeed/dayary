@@ -1,9 +1,6 @@
 package com.inc.dayary.repository;
 
 import java.util.List;
-
-import javax.validation.Valid;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -30,8 +27,3 @@ public class DiaryDao {
 	}
 
 }
-
-
-
-
-

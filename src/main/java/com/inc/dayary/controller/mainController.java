@@ -16,16 +16,13 @@ import com.inc.dayary.domain.Member;
 import com.inc.dayary.service.DiaryService;
 
 @Controller
-public class DiaryController {
+public class mainController {
 	
 	@Autowired
 	DiaryService diaryService;
 	
-	@GetMapping("/")
-	public String main(Model model, HttpSession session) {
-		Member member = (Member)session.getAttribute("member");
-		model.addAttribute("diaryList", 
-				           diaryService.list(member.getId()));
+	@GetMapping("/main")
+	public String main() {
 		return "main";
 	}
 	
@@ -44,7 +41,6 @@ public class DiaryController {
 		}
 		Member member = (Member)session.getAttribute("member");
 		diary.setU_id(member.getId());
-
 		diaryService.add(diary);
 		return "redirect:/";
 	}
