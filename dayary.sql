@@ -1,7 +1,7 @@
 
-create user commitnpush identified by 11111111;
+create user YBKWeed identified by 11111111;
 
-grant dba to commitnpush;
+grant dba to YBKWeed;
 
 --diary
 create table diary(
@@ -33,6 +33,27 @@ create table member(
     email varchar2(30) not null unique,
     gender char(1) check(gender in('m', 'f'))
 );
-    
+
+alter table diary add constraint fk_diary_u_id 
+foreign key(u_id)
+references member(id);  
+
+select * from member;
+
+insert into member values('Weed', 1234, '김영범', 'dudqja1003@naver.com', 'm');
+
+create table tag(
+    id number primary key,
+    d_id number references diary(id),
+    name varchar2(30) not null,
+    color varchar2(10) default 'default' not null
+);
+
+create sequence seq_tag_id;
+
+
+
+
+
 
 

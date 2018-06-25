@@ -9,6 +9,7 @@
   <mappers>
     <mapper resource="mybatis/mapper/diary.xml"/>
     <mapper resource="mybatis/mapper/member.xml"/>
+    <mapper resource="mybatis/mapper/tag.xml"/>
   </mappers>
 </configuration>
 

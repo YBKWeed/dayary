@@ -18,12 +18,5 @@ public class ServletContext implements WebMvcConfigurer {
 		        .addPathPatterns("/")
 		        .addPathPatterns("/member/mypage")
 		        .addPathPatterns("/diary/**");
-		
 	}
-	
-	
-	
-	
-	
-	
 }

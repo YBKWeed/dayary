@@ -3,18 +3,33 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="diary">
-	<select id="list" resultType="diary" parameterType="string">
+	<select id="list" resultMap="diaryMap" parameterType="string">
 		select * from diary 
 		<if test="value != null">
 		where u_id = #{value}
 		</if> 
 		order by regdate desc
 	</select>
+	<resultMap type="diary" id="diaryMap">
+		<id property="id" column="id"/>
+		<collection property="tags" select="tag.list" column="id" ofType="tag"/>
+	</resultMap>
 	<insert id="add" parameterType="diary">
 		insert into diary
 		values(seq_diary_id.nextval, #{u_id}, #{title},
-			   #{content}, sysdate)	
+			   #{content}, sysdate)
+		<selectKey resultType="int" keyProperty="id" order="AFTER">
+			select seq_diary_id.currval from dual
+		</selectKey>			   
 	</insert>   
 </mapper>
+
+
+
+
+
+
+
+
 
 

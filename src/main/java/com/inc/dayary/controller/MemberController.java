@@ -102,7 +102,8 @@ public class MemberController {
 		String emailCode = null;
 		try {
 			emailCode = memberService.sendCertifyEmail(email);
-		}catch(RuntimeException e) {
+		}catch(Exception e) {
+			e.printStackTrace();
 			return "error";
 		}
 		session.setAttribute("email", email);
@@ -152,15 +153,4 @@ public class MemberController {
 				.compile("([A-Za-z0-9]+@[A-Za-z0-9]+.[A-Za-z]{2,10})")
 				.matcher(email).matches();
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-

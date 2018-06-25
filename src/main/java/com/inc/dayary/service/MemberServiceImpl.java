@@ -34,7 +34,7 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public String sendCertifyEmail(String email) {
-		String from = "lognamu@gmail.com";
+		String from = "dudqja1003@gmail.com";
 		String subject = "Dayary 이메일 인증";
 		String emailCode = makeRandomCode();
 		String content = "인증코드 : "+emailCode;
